@@ -61,7 +61,7 @@ css = """
 
 print(f"Loading web-ui with model index: {config.MODEL_INDEX},{config.MODEL_SUBINDEX}")
 with gr.Blocks(theme=gr.themes.Soft(), css=css, title="Text2Image | by DFT.WIKI") as demo:
-    gr.Markdown("## 🖌️ Uncensored Text-to-Image (NSFW) | Use with resposibility and respect!")
+    gr.Markdown("## 🖌️ Uncensored Text-to-Image (NSFW) | Use with responsibility and respect!")
 
     with gr.Row():
         with gr.Column():

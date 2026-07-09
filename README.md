@@ -2,7 +2,7 @@
 
 Text-to-Image is a technique of generating images from prompts.
 
-**Disclaimer:** The code in this repository is capable of downloading and running multiple *uncensored models. Use with resposibility and respect!
+**Disclaimer:** The code in this repository is capable of downloading and running multiple *uncensored models. Use with responsibility and respect!
 
 Content of the readme.
 - Container
@@ -11,7 +11,7 @@ Content of the readme.
   - Benchmarking
     - Runs the same batch of prompts against all models for comparison.
   - CLI
-    - Can generates muiltiple images fromt he same prompt,
+    - Can generates multiple images from the same prompt,
     - Easy to integrate with other apps or automations,
     - Has a randomizer function for prompts.
       - **Warning:** Customize the word list to match your objectives. As provided, it contains mature content.
@@ -50,7 +50,7 @@ docker rm Text2Image
 
 ### Benchmarking
 
-It will produce a batch of images with the same list (`benchmarking.prompts`) of prompts in all models.
+It will produce a batch of images with the same list (`benchmark.prompts`) of prompts in all models.
 
 Running
 ```bash

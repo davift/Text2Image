@@ -10,14 +10,14 @@ def pipeline(index, subindex):
 
     if index == 0:
         from diffusers import StableDiffusionXLPipeline, EulerAncestralDiscreteScheduler
-        list = [
+        models = [
             "votepurchase/waiREALCN_v150",            # Striggles to generate people of color. They look asian.
             "votepurchase/waiREALCN_v14",             # Striggles to generate people of color. They look asian.
             "votepurchase/pornmasterPro_noobV3VAE",   # Striggles to generate people of color. Pointy teeth when smiling.
             "votepurchase/pornmasterPro_realismILV4", # Struggles to generate people of color. Maybe less the above ones.
         ]
         pipe = StableDiffusionXLPipeline.from_pretrained(
-            list[subindex],
+            models[subindex],
             cache_dir=config.MODELS,
             torch_dtype=torch.float16,                # Do not change to `dtype`, it will cause OOM error.
             variant="fp16",
@@ -33,15 +33,15 @@ def pipeline(index, subindex):
 
     if index == 1:
         from diffusers import AutoPipelineForText2Image, DEISMultistepScheduler
-        list = [
+        models = [
             "Lykon/absolute-reality-1.81",            # Less bias towards people of color.
             "Lykon/DreamShaper-8",                    # Less bias towards people of color.
             "Lykon/NeverEnding-Dream",                # Not super realistic. No safe tensors.
         ]
         pipe = AutoPipelineForText2Image.from_pretrained(
-            list[subindex],
+            models[subindex],
             cache_dir=config.MODELS,
-            dtype=torch.float16,
+            torch_dtype=torch.float16,
             use_safetensors=True,
             # local_files_only=True
         )
@@ -55,11 +55,11 @@ def pipeline(index, subindex):
 
     if index == 2:
         from diffusers import DiffusionPipeline
-        list = [
+        models = [
             "Heartsync/NSFW-Uncensored",              # Tends to produce anime style.
         ]
         pipe = DiffusionPipeline.from_pretrained(
-            list[subindex],
+            models[subindex],
             cache_dir = config.MODELS,
             torch_dtype=torch.float16,
             use_safetensors = True,
@@ -73,11 +73,11 @@ def pipeline(index, subindex):
 
     # if index == 3:
     #     from diffusers import ZImagePipeline          # Could not make it to work in my hardware.
-    #     list = [
+    #     models = [
     #         "Tongyi-MAI/Z-Image-Turbo",
     #     ]
     #     pipe = ZImagePipeline.from_pretrained(
-    #         list[subindex],
+    #         models[subindex],
     #         cache_dir=config.MODELS,
     #         torch_dtype=torch.bfloat16,
     #         low_cpu_mem_usage=True,
